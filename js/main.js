@@ -35,7 +35,7 @@ dom('addItem').onclick = () => {
     dom('newTask').value = "";
     // console.log(work);
 }
-
+// xóa task
 window.removeWork = (congViec) => {
     workService.removeWork(congViec);
     renderWork()
@@ -65,9 +65,14 @@ window.tickWork = (congViec) => {
 
 dom('two').onclick = () => {
 
-    const temp1 = workService.WorkList  
-    console.log(temp1);
-
-
+   workService.WorkList.sort( (a, b) =>  ('' + a.congViec).localeCompare(b.congViec) );
+   renderWork();
 }
+
+dom('three').onclick = () => {
+
+    workService.WorkList.sort( (a, b) =>  ('' + b.congViec).localeCompare(a.congViec) );
+    renderWork();
+ }
+ 
 

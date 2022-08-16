@@ -41,12 +41,11 @@ window.removeWork = (congViec) => {
     renderWork()
 }
 // tạo hàm xuất cách việc đã hoàn thành
-
+const temp = []
 window.tickWork = (congViec) => {
     const renderWorkComplete = () => {
 
         const work = workService.findWork(congViec)
-        const temp = []
         temp.push(work.congViec);
         console.log(temp);
         let html = "";
